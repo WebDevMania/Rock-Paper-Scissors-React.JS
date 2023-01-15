@@ -6,7 +6,7 @@ const Home = () => {
    const [selectedIdx, setSelectedIdx] = useState(0)
 
    const [yourScore, setYourScore] = useState(0)
-   const [compScore, setCompScore] = useState(0)
+   const [computerScore, setComputerScore] = useState(0)
 
    const [playing, setPlaying] = useState(false)
    const [isDraw, setIsDraw] = useState(false)
@@ -47,7 +47,7 @@ const Home = () => {
         setYouLastlyPlayed(prev => compSelection.emoji)
 
         if(compSelection.winsAgainst === playerSelection.type){
-            setCompScore(prev=> prev + 1)
+            setComputerScore(prev=> prev + 1)
 
             setComputerWon(prev => true)
             setTimeout(() => {
@@ -82,7 +82,7 @@ const Home = () => {
             </div>
             <div className={classes.row}>
                 <div className={classes.col}>You {yourScore}</div>
-                <div className={classes.col}>Computer {compScore}</div>
+                <div className={classes.col}>Computer {computerScore}</div>
             </div>
             <div className={classes.types}>
                 <div className={`${classes.type} ${selectedIdx === 0 && classes.active}`} onClick={() => setSelectedIdx(prev=> 0)}>✊</div>
